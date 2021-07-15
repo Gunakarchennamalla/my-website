@@ -416,20 +416,20 @@ h6{ font-size: 16px; }
 }
 
 #back2Top {
-    width: 40px;
-    line-height: 40px;
+    width: 25px;
+    line-height: 25px;
     overflow: hidden;
     z-index: 999;
     display: none;
     cursor: pointer;
     
     position: fixed;
-    bottom: 15px;
+    bottom: 5px;
     right: 15px;
     background-color: var(--mainColor);
     color: var(--mainText);
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     text-decoration: none;
     border-radius: 15%;
 }
@@ -437,6 +437,110 @@ h6{ font-size: 16px; }
     background-color: var(--btnColor);
     color: #FFF;
 }
+
+/* floating button */
+
+menu {
+  --size: 2.5rem;
+  --radius: 6rem;
+  --padding: 1rem;
+  --bg-color: rgba(255, 255, 255, 0.9);
+  --fg-color: rgba(0, 0, 0, 0.7);
+  --hi-color: #c22eff;
+  
+  position: fixed;
+  bottom: var(--padding);
+  right: var(--padding);
+}
+
+menu > * {
+  position: absolute;
+  
+  display: grid;
+  place-content: center;
+  
+  border-radius: 50%;
+  
+  background: var(--mainColor);
+  color: var(--mainText);
+  
+  text-decoration: none;
+  
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.6);
+}
+
+menu > .action {
+  --factor: 0;
+  
+  width: var(--size);
+  height: var(--size);
+  right: calc(0.35 * var(--size));
+  bottom: calc(0.35 * var(--size));
+  
+  opacity: 0;
+  
+  transform: rotate(calc(-1 * var(--angle))) translateY(calc(-1 * var(--radius) * var(--factor))) rotate(var(--angle));
+  
+  transition: transform 250ms ease-in-out, opacity 250ms ease-in-out, box-shadow 250ms ease-in-out, color 250ms ease-in-out;
+}
+
+menu > .action:hover, menu > .trigger:hover {
+  color: var(--btnColor);
+  box-shadow: 0px 0px 0px 0.35rem rgba(0, 0, 0, 0.2);
+}
+
+menu.open > .action {
+  --factor: 1;
+  
+  opacity: 1;
+}
+
+menu > .action:nth-child(1) {
+  --angle: -10deg;
+  transition-delay: 0ms;
+}
+
+menu > .action:nth-child(2) {
+  --angle: 20deg;
+  transition-delay: 50ms;
+}
+
+menu > .action:nth-child(3) {
+  --angle: 50deg;
+  transition-delay: 100ms;
+}
+
+menu > .action:nth-child(4) {
+  --angle: 80deg;
+  transition-delay: 150ms;
+}
+
+menu > .action:nth-child(5) {
+  --angle: 110deg;
+  transition-delay: 150ms;
+}
+
+menu > .trigger {
+  width: calc(1.6 * var(--size));
+  height: calc(1.6 * var(--size));
+  bottom: 0;
+  right: 0;
+  
+  font-size: 2rem;
+  transition: box-shadow 250ms ease-in-out, color 250ms ease-in-out;
+}
+
+menu > .trigger > i {
+  transition: transform 250ms ease-in-out;
+}
+
+menu.open > .trigger > i {
+  transform: rotate(-135deg);
+}
+
+
+
+
 
 @media  screen and (max-width:1200px) {
     .main-container{

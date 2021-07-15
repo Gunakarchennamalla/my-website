@@ -1,3 +1,4 @@
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,13 +7,13 @@
 
         <meta name="viewport" content="width=device-width,
         initial-scale=1, maximum-scale=1, minimum-scale=1" />
-	
+
 	<meta name="google-site-verification" content="xfNLHQwBfTKusveuESYi3Mpp_FDfFHGz3i8RuQulxMw" />
 
         <meta name="description"
         content="This is a Portfolio website implemented by Anju Gunakar Chennamalla,He is a Uipath RPA developer and full stack web developer.">
-       
-        <link rel="icon" type="image/png" href="images/fav-logo.png"/>
+
+        <link rel="icon" type="image/png" href="{% static '/assets/img/fav-logo.png' %}"/>
 
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +24,7 @@
 
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-        <link rel="stylesheet" type="text/css" href="default.css">
+        <link rel="stylesheet" type="text/css" href="{% static '/assets/css/default.css' %}">
 
         <link id="theme-style" rel="stylesheet" type="text/css" href="">
 
@@ -51,7 +52,7 @@
                     </div>
 
                     <div class="left-column">
-                        <img id="profile_pic" src="images/Guna.png">
+                        <img id="profile_pic" src="{% static '/assets/img/Guna.png' %}">
                         <h5 style="text-align: center;line-height: 0;">Personalize Theme</h5>
 
                         <div id="theme-options-wrapper">
@@ -103,7 +104,7 @@
                     <h4>TOP EXPERTISE</h4>
 
                     <p>RPA developer with primary focus on UiPath,
-                    Fullstack developement with Django: <a href="Anju Gunkar - Resume.pdf">Download Resume</a></p>
+                    Fullstack developement with Django: <a href="{% static '/assets/pdf/Anju Gunkar - Resume.pdf' %}">Download Resume</a></p>
                     
                     <div id="skills">
                         <ul>
@@ -127,7 +128,7 @@
                     </div>
                 </div>
                     <div class="social-links">
-                        <img id="social_img" src="images/linkedin.png">
+                        <img id="social_img" src="{% static '/assets/img/linkedin.png' %}">
                         <h3>Follow me on Linkedin</h3>
                         <a href="https://www.linkedin.com/in/anju-gunakar-chennamalla">Linkedin: @Anju Gunakar</a>
                         
@@ -143,7 +144,7 @@
                 <div class="post-wrapper">
                     <div>
                         <div class="post">
-                            <img class="thumbnail" src="images/uipath.jpg">
+                            <img class="thumbnail" src="{% static '/assets/img/uipath.jpg' %}">
                             <div class="post-preview">
                                 <h6 class="post-title">RPA UiPath</h6>
                                 <p class="post-intro">I developed an RPA solution using Uipath for automating the invoice creation in Oracle e-business suite along with my team,where robot can classify the invoices and extracts the data accordingly.
@@ -154,7 +155,7 @@
                     </div>
                     <div>
                         <div class="post">
-                            <img class="thumbnail" src="images/powerautomate.png">
+                            <img class="thumbnail" src="{% static '/assets/img/powerautomate.png' %}">
                             <div class="post-preview">
                                 <h6 class="post-title">RPA PowerAutomate</h6>
                                 <p class="post-intro">While implementing my RPA solution for invoice processing using uipath, I've used PowerAutomate for getting approvals and email alerts whenever a new invoice is created in database.
@@ -165,7 +166,7 @@
                     </div>
                     <div>
                         <div class="post">
-                            <img class="thumbnail" src="images/django.jpg">
+                            <img class="thumbnail" src="{% static '/assets/img/django.jpg' %}">
                             <div class="post-preview">
                                 <h6 class="post-title">Fullstack Django</h6>
                                 <p class="post-intro">For complete monitoring of our RPA solution like status of the job, robots, invoices etc I've choosed Django to design a website with beautful dashboards using chart.js and few other components.
@@ -180,16 +181,16 @@
         <section class="s2">
             <div class="main-container">
                 <h3 style="text-align: center; ">Get In Touch</h3>
-                <!--{% if messages %}
+                {% if messages %}
                     <ul class="messages">
                         {% for message in messages %}
                             <li {% if message.tags %} style="text-align:center;" class="{{ message.tags }}"{% endif %} >{{ message }}</li>
                         {% endfor %}
                     </ul>
-                {% else %}-->
+                {% else %}
 
                 <form id="contact-form" action="{% url 'contact' %}" method="POST">
-                    <!--{% csrf_token %}-->
+                    {% csrf_token %}
 
                     <label>Name</label>
                     <input class="input-field" type="text" name="name">
@@ -206,15 +207,17 @@
                     <input id="submit-btn" type="submit" value="Send">
                 </form>
 
-                <!--{% endif %}-->
+                {% endif %}
 
                 
             </div>
             <a id="back2Top" title="Back to top" href="#"><i class="fas fa-angle-double-up"></i></a>
-         
+            
         </section>
 
-  	<!--float button -->
+        <!--div style='max-width: 640px'><div style='position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;'><iframe width="640" height="360" src="https://web.microsoftstream.com/embed/video/72086d52-9746-4f72-b140-3db5ded2db59?autoplay=true&showinfo=true" allowfullscreen style="border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; max-width: 100%;"></iframe></div></div-->
+
+          	<!--float button -->
 		<menu class="">
 			<a href="https://github.com/anjugunakar" class="action"><i class="fab fa-github"></i></a>
   			<a href="https://wa.link/9bigjw" class="action"><i class="fab fa-whatsapp"></i></a>
@@ -226,10 +229,6 @@
 		</menu>
         
         
-
-        <script type="text/javascript">
-
-        </script>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
@@ -237,6 +236,6 @@
 
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="{% static '/assets/js/script.js' %}"></script>
     </body>
 </html>
